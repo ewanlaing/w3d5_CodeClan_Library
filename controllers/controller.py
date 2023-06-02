@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect
 from app import app
 from models.book import *
-from models.books import books, add_new_book, delete_book
+from models.books import books, add_new_book, delete_book, check_out_book
 
 @app.route("/")
 def index():
@@ -29,4 +29,9 @@ def add_book():
 @app.route("/home/delete/<index>", methods=["POST"])
 def remove_book(index):
     delete_book(index)
+    return render_template("index.html", books=books)
+
+@app.route("/home/checkout/<index>", methods=["POST"])
+def checkout_book(index):
+    check_out_book(index)
     return render_template("index.html", books=books)

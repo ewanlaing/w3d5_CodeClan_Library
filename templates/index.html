@@ -29,6 +29,7 @@
         <form class="checkout" action="/home/checkout/{{books.index(book)}}" method="POST">
             <input type="checkbox" name="checkout" id="checkout">
             <label for="checkout">Check this book out</label>
+            <input type="submit" value="confirm">
         </form>
         <form class="remove" action="/home/delete/{{books.index(book)}}" method="POST">
             <input type="submit" value="Remove book">    

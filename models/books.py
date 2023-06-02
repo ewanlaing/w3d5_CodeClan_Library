@@ -11,3 +11,7 @@ def add_new_book(new_book):
 
 def delete_book(index):
     books.pop(int(index))
+
+def check_out_book(index):
+    book = books[int(index)]
+    book.checked_out = True
