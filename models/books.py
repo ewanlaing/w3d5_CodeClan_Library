@@ -15,3 +15,7 @@ def delete_book(index):
 def check_out_book(index):
     book = books[int(index)]
     book.checked_out = True
+
+def check_in_book(index):
+    book = books[int(index)]
+    book.checked_out = False

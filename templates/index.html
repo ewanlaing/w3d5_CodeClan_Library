@@ -27,8 +27,10 @@
         </h4>
         <a href="/home/{{books.index(book)}}">Select Book</a>
         <form class="checkout" action="/home/checkout/{{books.index(book)}}" method="POST">
-            <input type="checkbox" name="checkout" id="checkout">
+            <input type="radio" name="checkout" value="checkout">
             <label for="checkout">Check this book out</label>
+            <input type="radio" name="checkin" value="checkin">
+            <label for="checkin">Check this book in</label>
             <input type="submit" value="confirm">
         </form>
         <form class="remove" action="/home/delete/{{books.index(book)}}" method="POST">
