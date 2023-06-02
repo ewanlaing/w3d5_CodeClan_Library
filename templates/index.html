@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>CodeClan Library</h1>
+
+<form class="form" action="/home" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+    <label for="author">Author</label>
+    <input type="text" name="author" id="author">
+    <label for="genre">Genre</label>
+    <input type="text" name="genre" id="genre">
+    <input type="submit" value="Add book">
+</form>
+
+<section>
+    {% for book in books %}
+    <div>
+        <h2>{{book.title}}</h2>
+        <h3>{{book.author}}</h3>
+        <h4>{{book.genre}}</h4>
+        <h4>Checked out:
+            {% if book.checked_out %}
+            &#10003;
+            {% endif %}
+        </h4>
+        <a href="/home/{{books.index(book)}}">Select Book</a>
+        <form class="checkout" action="/home/checkout/{{books.index(book)}}" method="POST">
+            <input type="checkbox" name="checkout" id="checkout">
+            <label for="checkout">Check this book out</label>
+        </form>
+        <form class="remove" action="/home/delete/{{books.index(book)}}" method="POST">
+            <input type="submit" value="Remove book">    
+        </form>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

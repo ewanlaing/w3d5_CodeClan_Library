@@ -1,0 +1,20 @@
+body{
+    background-color:darkslategrey;
+}
+
+h1{
+    text-align: center;
+    color:cornsilk
+}
+
+.form{
+    display: flex;
+    justify-content:flex-start;
+}
+
+section {
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
