@@ -12,9 +12,14 @@ h1{
     justify-content:flex-start;
 }
 
-section {
+section{
     background-color: grey;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.individual{
+    background-color: grey;
+    text-align: center;
 }
